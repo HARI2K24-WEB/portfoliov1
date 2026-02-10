@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Animated UI/UX Portfolio</title>
+    <title>Hariprasanth UI/UX Designer</title>
     <meta property="og:image" content="https://bolt.new/static/og_default.png" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="https://bolt.new/static/og_default.png" />
@@ -12,5 +12,19 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+      (function(){
+        const classes = ['bg-theme-1','bg-theme-2','bg-theme-3','bg-theme-4','bg-animated'];
+        let i = 0;
+        function cycle(){
+          document.body.classList.remove(...classes);
+          const cls = classes[i % classes.length];
+          document.body.classList.add(cls);
+          i++;
+        }
+        cycle();
+        setInterval(cycle, 5000);
+      })();
+    </script>
   </body>
 </html>
